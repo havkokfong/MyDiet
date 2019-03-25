@@ -1,14 +1,27 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="fill_parent"
-    android:background="#e01a35"
-    tools:context=".Splashscreen" >
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:background="?attr/colorBackgroundFloating"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    tools:context=".Splashscreen">
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_centerHorizontal="true" />
+        android:layout_width="458dp"
+        android:layout_height="437dp"
+        android:src="@drawable/salad" />
 
-</RelativeLayout>
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        android:gravity="center"
+        android:text="Healthy Foods"
+        android:textColor="@android:color/holo_green_light"
+        android:textSize="50sp" />
+
+
+</LinearLayout>
