@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">My Diet</string>
+    <string name="healthy_foods_text">Healthy Foods</string>
 </resources>
