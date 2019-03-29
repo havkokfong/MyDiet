@@ -24,6 +24,10 @@ public class Splashscreen extends Activity {
         Random randomGenerator = new Random();
         int r= randomGenerator.nextInt(ids.length);
         this.imageView.setImageDrawable(getResources().getDrawable(ids[r]));
+        int[] word = new int[]{R.id.textView, R.id.textView1, R.id.textView2};
+        Random generate = new Random();
+        int i = generate.nextInt(word.length);
+
 
         splashTread = new Thread() {
             @Override
