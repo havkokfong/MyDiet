@@ -40,11 +40,19 @@
         android:textSize="30sp" />
 
     <TextView
-        android:id="@+id/textViewPrevious"
+        android:id="@+id/textViewMin"
         android:layout_width="match_parent"
         android:layout_height="69dp"
         android:gravity="center"
-        android:textSize="30sp"
+        android:textSize="25sp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textViewMax"
+        android:layout_width="match_parent"
+        android:layout_height="69dp"
+        android:gravity="center"
+        android:textSize="25sp"
         android:text="TextView" />
 
     <Button

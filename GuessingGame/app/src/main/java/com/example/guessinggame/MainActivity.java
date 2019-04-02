@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText guessField;
     private SharedPreferences preferences;
     private TextView progressText;
-    private TextView previousNum;
+    private TextView maxText;
 
     private int secretNumber = 3;
 
@@ -30,16 +30,14 @@ public class MainActivity extends AppCompatActivity {
 
         statusText = (TextView) findViewById(R.id.statusText);
         guessField = (EditText) findViewById(R.id.guessField);
-        previousNum = (TextView) findViewById(R.id.textViewPrevious);
         statusText.setText("Welcome to GuessingApp");
 
-        Random number = new Random();
-        secretNumber = 1+ number.nextInt(10);
-
         preferences = getSharedPreferences("value", MODE_PRIVATE);
-
-        progressText = (TextView) findViewById(R.id.textViewPrevious);
-
+        Random number = new Random();
+        secretNumber = preferences.getInt("seek bar", 0)+ number.nextInt(preferences.getInt
+                ("seek bar max",10));
+        progressText = (TextView) findViewById(R.id.textViewMin);
+        maxText = (TextView) findViewById(R.id.textViewMax);
         guessField.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -77,7 +75,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        progressText.setText("The previous number is: " + preferences.getInt("seek bar", 0));
+        progressText.setText("The minimum number is: " + preferences.getInt("seek bar", 0));
+        maxText.setText("The maximum number is: " + preferences.getInt("seek bar max", 10));
     }
 
     public void handler(View view) {

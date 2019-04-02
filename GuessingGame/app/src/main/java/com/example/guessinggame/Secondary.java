@@ -21,6 +21,39 @@ public class Secondary extends AppCompatActivity {
         seekBarMin = (SeekBar) findViewById(R.id.seekBarMin);
         seekBarMax = (SeekBar) findViewById(R.id.seekBarMax);
         preferences = getSharedPreferences("value", MODE_PRIVATE);
+
+            seekBarMin.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                @Override
+                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                    preferences.edit().putInt("seek bar", progress).apply();
+                }
+
+                @Override
+                public void onStartTrackingTouch(SeekBar seekBar) {
+
+                }
+
+                @Override
+                public void onStopTrackingTouch(SeekBar seekBar) {
+
+                }
+            });
+            seekBarMax.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                @Override
+                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                    preferences.edit().putInt("seek bar max", progress).apply();
+                }
+
+                @Override
+                public void onStartTrackingTouch(SeekBar seekBar) {
+
+                }
+
+                @Override
+                public void onStopTrackingTouch(SeekBar seekBar) {
+
+                }
+            });
     }
 
     @Override
