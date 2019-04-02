@@ -4,26 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingTop="10dp"
             android:text="Guess:"
-            android:textSize="30sp"
-            android:paddingTop="10dp"/>
+            android:textSize="30sp" />
 
         <EditText
             android:id="@+id/guessField"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textSize="30sp" />
 
     </LinearLayout>
 
@@ -31,10 +34,27 @@
         android:id="@+id/statusText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Status:"
-        android:textSize="30sp"
         android:gravity="center"
-        android:paddingTop="20dp"/>
+        android:paddingTop="20dp"
+        android:text="Status"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/textViewPrevious"
+        android:layout_width="match_parent"
+        android:layout_height="69dp"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:text="TextView" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="377dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="20dp"
+        android:onClick="handler"
+        android:text="Set Limit"
+        android:textSize="30sp" />
 
 
 </LinearLayout>
